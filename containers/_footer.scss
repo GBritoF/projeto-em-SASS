@@ -1,0 +1,73 @@
+@import '../funcoes/borda';
+@import '../Variaveis/variaveis';
+
+footer {
+    @include borda;
+    border-bottom: 0;
+    padding: 1rem 1.25rem 4rem;
+    p {
+        font-size: 16px;
+        font-weight: 500;
+        margin: 16px 0 48px 0;
+        
+    }
+    .footer__catalogo {
+        display: block;
+        text-decoration: none;
+        padding-left: 0;
+        margin: 32px 0;
+        font-size: 20px;
+        font-weight: 500;
+        color: $cor-preta;
+        &:hover {
+            color: $cor-laranja-claro;
+        }
+    }
+    form {
+        label {
+            margin-top: 48px;
+            display: block;
+            font-size: 1.5rem;
+            
+        }
+        input {
+            border: 2px solid $cor-preta;
+            box-shadow: 4px 4px 0 $cor-preta;
+            font-size: 1.5rem;
+            padding: .5rem;
+            width: 100%;
+            margin: 1rem 0;
+            &:focus {
+                outline: none
+            }
+        }
+        .button {
+            @include botao;
+            margin-bottom: 0;
+        }
+    }
+}
+
+@media screen and (min-width: 72rem) {
+    footer {
+        .container {
+            display: flex;
+            padding: 0 90px;
+            .container__primeira-coluna {
+                margin-top: 48px;
+                flex: 2;
+                p {
+                    font-size: 1.25rem;
+                    max-width: 16rem;
+                }
+            }
+            nav {
+                flex: 1;
+                margin-top: 25px;
+            }
+            form {
+                flex: 3;
+            }
+        }
+    }
+}

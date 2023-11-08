@@ -1,0 +1,22 @@
+@mixin botao {
+    background-color: $cor-laranja-escuro;
+    border: 2px solid $cor-preta;
+    box-shadow: 4px 4px 0 $cor-preta;
+    color: $cor-preta;
+    text-decoration: none;
+    padding: .75rem 1rem;
+    max-width: 14rem;
+    text-align: center;
+    display: block;
+    &:hover {
+        background-color: $cor-laranja-claro;
+        border: 2px solid $cor-preta;
+        box-shadow: 4px 4px 0 $cor-preta;
+        color: $cor-preta;
+        text-decoration: none;
+        padding: .75rem 1rem;
+        max-width: 14rem;
+        text-align: center;
+        display: block;
+    }
+}

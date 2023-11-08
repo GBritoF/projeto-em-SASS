@@ -1,0 +1,130 @@
+@import '../funcoes/borda';
+@import '../Variaveis/variaveis';
+@import '../funcoes/botao';
+
+.hero__section {
+    @include borda;
+    padding-bottom: 16rem;
+    img {
+        display: block;
+        margin: 1.25rem 0 0 auto;
+        max-width: 100%;
+        padding-right: 0;
+    }
+    h1 {
+        font-size: 48px;
+        font-weight: 900;
+        line-height: 105%;
+        margin-top: 1.25rem; 
+        span {
+            color: $cor-laranja-escuro;
+            display: block;
+            position: relative;
+            &::after {
+                content: '';
+                background: url(../imagens/vector.svg);
+                position: absolute;
+                top: -0.75rem;
+                height: 36px;
+                width: 40px;
+            }
+        }
+    }
+    p {
+        font-size: 20px;
+        padding-right: 1.25rem;
+        margin: 2rem 0;
+    }
+    .button {
+        @include botao;
+        position: relative;
+        &::after {
+            content: '';
+            background: url(../imagens/arrow-curve.svg);
+            position: absolute;
+            top: 5rem;
+            right: -4rem;
+            height: 48px;
+            width: 132px;
+        }
+    }
+}
+
+.container__cards {
+    @include borda;
+    padding-bottom: 8rem;
+    .cards {
+        display: flex;
+        flex-direction: column;
+        align-items: start;
+        gap: 1.25rem;
+        margin-top: -8rem;
+        margin-bottom: 4rem;
+        article {
+            background-color: $cor-laranja-escuro;
+            border: 2px solid black;
+            box-shadow: 4px 4px  black;
+            width: 272px;
+            height: 306px;
+            padding: 2rem 0 0 2rem;
+            &:nth-child(2n) {
+                align-self: end;
+                background-color: $cor-laranja-claro;
+            }
+            strong {
+                display: block;
+                font-size: 24px;
+                font-weight: 900;
+                margin: 1rem 0;
+            }
+            p {
+                font-size: 16px;
+                font-weight: 500;
+                display: block;
+            }
+            a {
+                display: block;
+                margin: 3rem 0 0 auto;
+                width: fit-content;
+            }
+        }
+    }
+    h2 {
+        font-size: 35px;
+        font-weight: 900;
+        text-align: center;
+        span {
+            color: $cor-laranja-escuro;
+        }
+    }
+    .button {
+        @include botao;
+        margin: auto;
+        margin-top: 2rem;
+    }
+}
+
+@media screen and (min-width: 40rem) {
+    .container__cards {
+        .cards {
+            flex-direction: row;
+            flex-wrap: wrap;
+            justify-content: center;
+            article:nth-child(2n) {
+                margin-top: 1rem;
+            }
+        }
+    }
+}
+
+@media screen and (min-width: 72rem) {
+    .hero__section {
+        .container__principal {
+            display: flex;
+            flex-direction: row-reverse;
+            align-items: center;
+            margin: 0 auto;
+            max-width: 72rem;
+        }
+    }
+}
